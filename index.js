@@ -35,7 +35,6 @@ app.get("/coordenadas", async(req, res)=>{
         res.status(200).json({mensagem: "Ocorreu um erro!"})
     }
 })
-    *
 
 
 //criar uma parta acessar a API
