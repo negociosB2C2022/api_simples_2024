@@ -17,10 +17,11 @@ app.use(cors())
 
 //criar rota inicial 
 app.get('/', (req, res)=>{
-    res.json({message: 'Tempo para atulização da api'})
+    res.json({message: 'Tentando consultar coordenadas'})
 })
 
 //pegando todas as coordenadas
+/*
 const Coordenadas= require("./Coordenadas")
 app.get("/coordenadas", async(req, res)=>{
     try {
@@ -34,6 +35,7 @@ app.get("/coordenadas", async(req, res)=>{
         res.status(200).json({mensagem: "Ocorreu um erro!"})
     }
 })
+    */
 
 
 
