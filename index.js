@@ -41,9 +41,10 @@ app.get("/coordenadas", async(req, res)=>{
 
 
 //criar uma parta acessar a API
-
+/*
 const porta= process.env.PORT || 3000
 app.listen(porta)
+*/
 
 
 
