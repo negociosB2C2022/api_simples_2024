@@ -40,10 +40,12 @@ app.get("/coordenadas", async(req, res)=>{
 
 
 //criar uma parta acessar a API
-/*
+
 const porta= process.env.PORT || 3000
 app.listen(porta)
-*/
+
+
+/*
 //conectando com o banco de dados 
 const BD_USER= process.env.BD_USER
 const BD_PASSWORD= encodeURIComponent(process.env.BD_PASSWORD)
@@ -58,3 +60,4 @@ mogoose.connect(
     console.log("Conexão realizada. Porta: "+ port)
 })
 .catch((error)=> console.log(error))
+*/
