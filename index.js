@@ -17,8 +17,9 @@ app.use(cors())
 
 //criar rota inicial 
 app.get('/', (req, res)=>{
-    res.json({message: 'Tentando consultar coordenadas'})
+    res.json({message: 'Conectado ao BD'})
 })
+
 
 //pegando todas as coordenadas
 /*
@@ -45,7 +46,7 @@ const porta= process.env.PORT || 3000
 app.listen(porta)
 
 
-/*
+
 //conectando com o banco de dados 
 const BD_USER= process.env.BD_USER
 const BD_PASSWORD= encodeURIComponent(process.env.BD_PASSWORD)
@@ -60,4 +61,3 @@ mogoose.connect(
     console.log("Conexão realizada. Porta: "+ port)
 })
 .catch((error)=> console.log(error))
-*/
