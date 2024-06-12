@@ -1,9 +1,11 @@
-// configuração inicial 
+// configuração inicial
 const express= require("express")
 const app= express()
 const cors= require('cors')
 require('dotenv').config()
 const mogoose= require("mongoose")
+
+
 
 //configurando a leitura de JSON (midwares)
 app.use(
@@ -12,40 +14,73 @@ app.use(
     })
 )
 app.use(express.json())
+
 app.use(cors())
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+const personRoutes = require("./routes/personRoutes")
+app.use('/person', personRoutes)
+
 //criar rota inicial 
 app.get('/', (req, res)=>{
-    res.json({message: 'Conectado ao BD'})
+    res.json({message: 'Oi Express'})
 })
 
 
-//pegando todas as coordenadas
-const Coordenadas= require("./Coordenadas")
-app.get("/coordenadas", async(req, res)=>{
-    try {
-        const coord= await Coordenadas.find()
-        res.status(200).json({
-            mensagem:"Todas as coordenadas logo abaixo.",
-            coord: coord
-        })
-
-    } catch (error) {
-        res.status(200).json({mensagem: "Ocorreu um erro!"})
-    }
-})
-
-
-//criar uma parta acessar a API
-/*
-const porta= process.env.PORT || 3000
-app.listen(porta)
+///rotas das coordenadas
+const coordenadasRoutes= require("./routes/coordenadasRouter")
+app.use('/coordenadas', coordenadasRoutes)
 */
+//ROTAS DA HOME - .../
+const homeRoutes= require("./routes/homeRoutes")
+app.use('/', homeRoutes)
+
+//ROTAS DAS COORDENADAS - .../coordenadas
+const coordenadasRouter= require("./routes/coordenadasRouter")
+app.use('/coordenadas', coordenadasRouter)
 
 
 
-//conectando com o banco de dados 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//conectando com o banco de dados
 const BD_USER= process.env.BD_USER
 const BD_PASSWORD= encodeURIComponent(process.env.BD_PASSWORD)
 const NAME_BD= process.env.NAME_BD
@@ -59,3 +94,10 @@ mogoose.connect(
     console.log("Conexão realizada. Porta: "+ port)
 })
 .catch((error)=> console.log(error))
+
+
+
+/*
+const porta= 3000
+app.listen(porta)
+*/
