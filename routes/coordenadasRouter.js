@@ -5,6 +5,7 @@ const CoordenadasController= require("../controller/CoordenadasController")
 
 router.get('', CoordenadasController.allCordenadas)
 router.post('', CoordenadasController.newCoordenadas)
+router.delete('', CoordenadasController.delCoordenada)
 
 
 module.exports = router

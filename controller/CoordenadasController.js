@@ -35,5 +35,44 @@ class CoordenadasController{
             })
         }
     }
+
+
+
+
+    // DELETA UMA COORDENADA
+    static async delCoordenada (req, res){
+        try {
+            const infos= req.body
+            if(infos.pass!= "manoellA"){
+                res.status(500).json({mesagem: "Senha Inválida", status: false})
+                return
+            }
+
+            const del= await Coordenadas.deleteOne({_id: infos.id})
+            res.status(200).json({
+                message: `Localização foi excluida com sucesso!.`,
+                //resp: infos
+                status: true
+            })
+
+    
+        } catch (error) {
+            res.status(500).json({
+                mensagem: "Erro ao excluir!"
+            })
+        }
+        
+        
+    }
+
+
+
+
 }
+
+
+
+
+
+
 module.exports= CoordenadasController
